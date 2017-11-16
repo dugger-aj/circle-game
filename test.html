@@ -1,0 +1,39 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>test</title>
+    <meta name="description" content="My Website">
+    <meta name="author" content="Aj Dugger">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="test.css">
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<body>
+	<div id="header">
+		<h1>The Circle Game</h2>
+	</div>
+	<br>
+	<div id="testcontainer">
+		<svg height="300" width="300">
+			<circle id="circle" cy="150" cx="150"r="135" stroke="steelblue" stroke-width="15" fill="none"/>
+			<circle id="circle2" cy="150" cx="150"r="1" stroke="black" stroke-width="15" fill="none"/>
+			<circle id="ouch" cy="150" cx="150"r="500" stroke="red" stroke-width="15" fill="none"/>
+			Sorry, your browser does not support inline SVG.  
+		</svg> 
+	</div>
+	<br>
+	<br>
+	<div id="slidecontainer">
+		<input type="range" min="1" max="135" value="135" class="slider" id="myRange">
+	</div>
+	<div id="bottom">
+			<p>Score: <span id="score"></span></p>
+	</div>
+<script src="test.js"></script>
+</body>
+</html>

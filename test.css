@@ -1,0 +1,57 @@
+html{
+	background-color: lightgray;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+#header{
+	background-color: black;
+	color:white;
+	text-align: center;
+	border-radius: 8px;
+}
+#testcontainer{
+	height: 200px;
+	text-align: center;
+}
+
+#slidecontainer{
+	width: 50%;
+	margin:auto;
+}
+
+.slider {
+	margin-top: 100px;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+ .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 25px;
+    background: steelblue;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 100px;
+    height: 25px;
+    background: steelblue;
+    cursor: pointer;
+} 
+
+#bottom{
+	background-color: black;
+	color: white;
+	font-size: 2em;
+}
+
+#bottom p{
+	text-align: center;
+}

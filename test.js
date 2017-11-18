@@ -19,6 +19,7 @@ start.addEventListener("click",function(){
     counter=0;
     score.innerHTML = counter;
     timer = 15; 
+     start.style.animation = "";
     
     
     slider.oninput = function(){
@@ -62,6 +63,7 @@ function reset(){
     black.setAttribute("r", 1);
     red.setAttribute("r", 0);
     slider.oninput = null;
+    start.style.animation = "playagain 5s  linear 0s infinite";
     
 }
 
@@ -69,7 +71,9 @@ function go (){
     var x = setInterval(function() {
         timer--;
         start.innerHTML = timer;
-        
+        if (timer < 6){
+            document.body.style.animation = "done 5s  linear 0s infinite";
+        }
         if (timer < 0) {
             clearInterval(x); 
             stop();
@@ -82,6 +86,7 @@ function go (){
 function stop(){
     timer = 0;
     start.innerHTML = "Game Over - Play Again?";
+    document.body.style.animation = "";
     reset(); 
     
 }

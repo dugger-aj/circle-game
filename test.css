@@ -78,3 +78,25 @@ button{
 		font-size: 1em;
 	}
 }
+
+@keyframes done {
+    0% {background: lightgray;}
+    12.5% {background: rgba(255,0,0,.5);}
+    25% {background: lightgray;}
+    37.5% {background: rgba(255,0,0,.5);}
+    50% {background: lightgray;}
+    62.5% {background: rgba(255,0,0,.5);}
+    75% {background: lightgray;}
+    87.5% {background: rgba(255,0,0,.5);}
+    100% {background: lightgray;}
+
+}
+
+@keyframes playagain {
+    0% {background: lightgray;}
+    25% {background: rgba(255,0,0,.5);}
+    50% {background: lightgray;}
+    75% {background: rgba(255,0,0,.5);} 
+    100% {background: lightgray;}
+
+}

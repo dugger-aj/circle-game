@@ -69,7 +69,7 @@ html{
 button{
     background-color: steelblue;
     width:50%;
-    font-size: 1gitem;
+    font-size: 1em;
     border-radius: 8px;
 }
 

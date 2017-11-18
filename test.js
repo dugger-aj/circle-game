@@ -7,6 +7,8 @@ var counter = 0;
 var red = document.getElementById("ouch");
 var pageTimer = document.getElementById("time");
 var start = document.getElementById("start");
+var menu = document.getElementById("menu");
+var menuIcon = document.getElementById("menuIcon");
 var compare;
 var ouchCompare;
 var blackValue;
@@ -99,5 +101,23 @@ function stop(){
     start.innerHTML = "Game Over - Play Again?";
     document.body.style.animation = "";
     reset(); 
+    
+}
+
+function showMenu(){
+    
+    if(menuIcon.className === "white"){
+		menuIcon.className = "black";
+	}
+	else{
+		menuIcon.className = "white"
+	}
+    
+    if(menu.className == "show"){
+        menu.className = "hide";
+    }
+    else{
+        menu.className = "show";
+    }
     
 }

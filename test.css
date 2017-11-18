@@ -1,12 +1,14 @@
 html{
 	background-color: lightgray;
 	font-family: 'Gloria Hallelujah', cursive;
+    height: 100%;
 }
 #header{
 	background-color: black;
 	color:white;
 	text-align: center;
 	border-radius: 8px;
+    font-size: 1.3em;
 }
 #testcontainer{
 	height: 200px;
@@ -19,11 +21,11 @@ html{
 }
 
 .slider {
-	margin-top: 100px;
+	margin-top: 30%;
     -webkit-appearance: none;
     width: 100%;
     height: 30px;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -37,6 +39,7 @@ html{
     height: 25px;
     background: steelblue;
     cursor: pointer;
+     border-radius: 8px;
 }
 
 .slider::-moz-range-thumb {
@@ -44,14 +47,28 @@ html{
     height: 25px;
     background: steelblue;
     cursor: pointer;
+    border-radius: 8px;
 } 
 
 #bottom{
 	background-color: black;
 	color: white;
 	font-size: 2em;
+    border-radius: 8px;
 }
 
 #bottom p{
 	text-align: center;
+}
+
+#startdiv{
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    background-color: steelblue;
+    width:50%;
+    font-size: 1em;
+    border-radius: 8px;
 }

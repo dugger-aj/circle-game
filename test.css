@@ -69,6 +69,12 @@ html{
 button{
     background-color: steelblue;
     width:50%;
-    font-size: 1em;
+    font-size: 1gitem;
     border-radius: 8px;
+}
+
+@media only screen and (max-width: 400px) {
+	#header{
+		font-size: 1em;
+	}
 }

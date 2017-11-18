@@ -13,6 +13,17 @@ var blackValue;
 var redValue;
 var blueValue;
 var timer;
+var myVar;
+
+function loader(){
+    myVar = setTimeout(showPage, 2000);
+    document.getElementById("main").style.display = "none";
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}
 
 start.addEventListener("click",function(){
     go();

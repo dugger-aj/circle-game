@@ -99,7 +99,7 @@ html{
     -webkit-appearance: none;
     width: 100%;
     height: 30px;
-    border-radius: 8px;
+    border-radius: 15px;
     background: #292b2d;
     outline: none;
     opacity: 0.7;
@@ -108,19 +108,19 @@ html{
  .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 100px;
-    height: 25px;
-    background: steelblue;
+    width: 40px;
+    height: 40px;
+    background: white;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 50%;
 }
 
 .slider::-moz-range-thumb {
-    width: 100px;
-    height: 25px;
-    background: steelblue;
+    width: 40px;
+    height: 40px;
+    background: white;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 50%;
 } 
 
 #bottom{
@@ -141,13 +141,8 @@ html{
 button{
     background-color: #292b2d;
     border: none;
-    border-bottom: white solid 1px;
     color:white;
-    width: 30%;
-    height: 100%;
     font-size: 1.3em;
-    border-radius: 8px;
-    padding: 8px 0px;
     font-family: 'Jura', sans-serif;
 }
 
@@ -161,10 +156,6 @@ button{
         margin-top: 80px;
     }
     
-    button{
-        width: 50%;
-        font-size: 1em;
-    }
 }
 
 

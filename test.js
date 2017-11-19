@@ -9,6 +9,8 @@ var pageTimer = document.getElementById("time");
 var start = document.getElementById("start");
 var menu = document.getElementById("menu");
 var menuIcon = document.getElementById("menuIcon");
+var play = document.getElementById("play");
+var scores = document.getElementById("scores");
 var compare;
 var ouchCompare;
 var blackValue;
@@ -16,6 +18,7 @@ var redValue;
 var blueValue;
 var timer;
 var myVar;
+
 
 function loader(){
     myVar = setTimeout(showPage, 2000);
@@ -32,7 +35,7 @@ start.addEventListener("click",function(){
     counter=0;
     score.innerHTML = counter;
     timer = 15; 
-     start.style.animation = "";
+    start.style.animation = "";
     
     
     slider.oninput = function(){
@@ -42,8 +45,6 @@ start.addEventListener("click",function(){
 		blueValue = blue.getAttribute("r");
         blackValue = Math.floor(Math.random() * (135 - 2) ) + 2;
         black.setAttribute("r", blackValue);
-        
-        // create red ring
 		
 		if(blackValue > blueValue){
             blackValue += 20;
@@ -76,7 +77,7 @@ function reset(){
     black.setAttribute("r", 1);
     red.setAttribute("r", 0);
     slider.oninput = null;
-    start.style.animation = "playagain 5s  linear 0s infinite";
+    start.style.animation = "playagain 5s  linear 0s 5";
     
 }
 
@@ -120,4 +121,22 @@ function showMenu(){
         menu.className = "show";
     }
     
+}
+
+function showPlay(){
+     if(play.className === "block"){
+		play.className = "none";
+	}
+	else{
+		play.className = "block"
+	}
+}
+
+function showScores(){
+     if(scores.className === "block"){
+		scores.className = "none";
+	}
+	else{
+		scores.className = "block"
+	}
 }

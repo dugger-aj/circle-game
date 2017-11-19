@@ -1,6 +1,6 @@
 html{
-	background-color: lightgray;
-	font-family: 'Gloria Hallelujah', cursive;
+	background-color: #292b2d;
+	font-family: 'Jura', sans-serif;
     height: 100%;
 }
 
@@ -24,8 +24,8 @@ html{
 #menu{
     z-index: 3;
     position: absolute;
-    width: 50%;
-    background: white;
+    width: 90%;
+    background: lightgray;
     border: solid black 1px;
     text-align: center;
     border-radius: 8px;
@@ -35,13 +35,30 @@ html{
     
 }
 
+.items{
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+}
+
+.items:hover{
+    background: white;
+}
+
 .show{
     
     left: 3%;
 }
 
 .hide{
-    left: -53%;
+    left: -100%;
+}
+
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
 }
 
   #loader {
@@ -61,7 +78,6 @@ html{
   }
 
 #header{
-	background-color: black;
 	color:white;
 	text-align: center;
 	border-radius: 8px;
@@ -70,6 +86,7 @@ html{
 #testcontainer{
 	height: 200px;
 	text-align: center;
+    margin-top: 5%;
 }
 
 #slidecontainer{
@@ -78,15 +95,14 @@ html{
 }
 
 .slider {
-	margin-top: 30%;
+    margin-top: 100px;
     -webkit-appearance: none;
     width: 100%;
     height: 30px;
     border-radius: 8px;
-    background: #d3d3d3;
+    background: #292b2d;
     outline: none;
     opacity: 0.7;
-    -webkit-transition: .2s;
     transition: opacity .2s;
 }
  .slider::-webkit-slider-thumb {
@@ -96,7 +112,7 @@ html{
     height: 25px;
     background: steelblue;
     cursor: pointer;
-     border-radius: 8px;
+    border-radius: 8px;
 }
 
 .slider::-moz-range-thumb {
@@ -108,7 +124,6 @@ html{
 } 
 
 #bottom{
-	background-color: black;
 	color: white;
 	font-size: 2em;
     border-radius: 8px;
@@ -124,39 +139,54 @@ html{
 }
 
 button{
-    background-color: steelblue;
+    background-color: #292b2d;
+    border: none;
+    border-bottom: white solid 1px;
+    color:white;
     width: 30%;
     height: 100%;
-    font-size: 1em;
+    font-size: 1.3em;
     border-radius: 8px;
     padding: 8px 0px;
+    font-family: 'Jura', sans-serif;
 }
+
 
 @media only screen and (max-width: 400px) {
 	#header{
 		font-size: 1em;
 	}
+    
+    .slider{
+        margin-top: 80px;
+    }
+    
+    button{
+        width: 50%;
+        font-size: 1em;
+    }
 }
 
+
 @keyframes done {
-    0% {background: lightgray;}
+    0% {background: #292b2d;}
     12.5% {background: rgba(255,0,0,.5);}
-    25% {background: lightgray;}
+    25% {background: #292b2d;}
     37.5% {background: rgba(255,0,0,.5);}
-    50% {background: lightgray;}
+    50% {background: #292b2d;}
     62.5% {background: rgba(255,0,0,.5);}
-    75% {background: lightgray;}
+    75% {background: #292b2d;}
     87.5% {background: rgba(255,0,0,.5);}
-    100% {background: lightgray;}
+    100% {background: #292b2d;}
 
 }
 
 @keyframes playagain {
-    0% {background: lightgray;}
+    0% {background: #292b2d;}
     25% {background: rgba(255,0,0,.5);}
-    50% {background: lightgray;}
+    50% {background: #292b2d;}
     75% {background: rgba(255,0,0,.5);} 
-    100% {background: lightgray;}
+    100% {background: #292b2d;}
 
 }
 

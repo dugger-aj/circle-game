@@ -10,7 +10,7 @@
     <meta name="author" content="Aj Dugger">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="test.css">
-	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
 </head>
 
 <body onload="loader();">
@@ -20,17 +20,24 @@
             <p>&#9776;</p>
         </div>
         <div class="hide" id="menu">
-            <p>How to Play</p>
-            <p>Its really easy. Hit "Begin!" and then slide the blue slider. The blue circle will
-            change size. Match the blue circle to the white as many times as you can without touching the red 
+            <h4 id="howToPlay" class="items"onclick="showPlay()">How to Play</h4>
+            <p id="play" class="none">Its really easy. Hit "Click to Begin!" and then slide the blue slider. The blue circle will change size. Match the blue circle to the white as many times as you can without touching the red 
             circle. Hurry though, you only have 15 seconds!</p>
+            <h4 class="items" onclick="showScores()">Top 5 Scores</h4>
+            <div class="none" id="scores">
+                <p  id="score1">Score Place Holder</p>
+                <p  id="score2">Score Place Holder</p>
+                <p  id="score3">Score Place Holder</p>
+                <p  id="score4">Score Place Holder</p>
+                <p  id="score5">Score Place Holder</p>
+            </div>
         </div>
         <div id="header">
             <h1 >The Circle Game</h1>
 
         </div>
         <div id="startdiv">
-            <button id="start">Begin!</button>
+            <button id="start">Click to Begin!</button>
         </div>
         <br>
         <div id="testcontainer">

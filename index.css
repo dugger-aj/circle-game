@@ -1,7 +1,7 @@
 html{
 	height: 100%;
-	background-color: black;
-	font-family: 'Orbitron', sans-serif;
+	background-color: #292b2d;
+	font-family: 'Jura', sans-serif;
 }
 
 body{
@@ -12,7 +12,7 @@ body{
 
 .circlesoflove{
 	border: steelblue 5px solid;
-	background: black;
+	background: #292b2d;
 	border-radius: 50%;
 	height: 100px;
 	width: 100px;
@@ -126,9 +126,9 @@ h1:after{
 
 .buttons button{
 	width: 100%;
-	font-family: 'Orbitron', sans-serif;
+	font-family: 'Jura', sans-serif;
 	border-radius: 12px;
-	font-size: 2em;
+	font-size: 4em;
 	background: steelblue;
 	color: black;
 	height: 100%;

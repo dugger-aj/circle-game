@@ -12,6 +12,7 @@ var menuIcon = document.getElementById("menuIcon");
 var play = document.getElementById("play");
 var scores = document.getElementById("scores");
 var redValueTest = document.getElementById("redValueTest");
+var highScore = document.getElementById("highScore");
 var compare;
 var ouchCompare;
 var whiteValue = 0;
@@ -20,10 +21,10 @@ var blueValue = 0;
 var timer;
 var myVar;
 
-
 function loader(){
     myVar = setTimeout(showPage, 2000);
     document.getElementById("main").style.display = "none";
+	highScore. innerHTML = localStorage.getItem("highScore");
 }
 
 function showPage() {
@@ -108,6 +109,8 @@ function stop(){
     timer = 0;
     start.innerHTML = "Game Over - Play Again?";
     document.body.style.animation = "";
+	localStorage.setItem("highScore",counter -1);
+	highScore.innerHTML = localStorage.getItem("highScore");
     reset(); 
     
 }
@@ -115,7 +118,7 @@ function stop(){
 function showMenu(){
     
     if(menuIcon.className === "white"){
-		menuIcon.className = "white";
+		menuIcon.className = "black";
 	}
 	else{
 		menuIcon.className = "white"
@@ -140,7 +143,7 @@ function showPlay(){
 }
 
 function showScores(){
-     if(scores.className === "block"){
+     if(scores.className == "block"){
 		scores.className = "none";
 	}
 	else{

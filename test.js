@@ -1,7 +1,7 @@
 var test = document.getElementById("index");
 var slider = document.getElementById("myRange");
 var blue = document.getElementById("circle");
-var black = document.getElementById("circle2");
+var white = document.getElementById("circle2");
 var score = document.getElementById("score");
 var counter = 0;
 var red = document.getElementById("ouch");
@@ -11,11 +11,12 @@ var menu = document.getElementById("menu");
 var menuIcon = document.getElementById("menuIcon");
 var play = document.getElementById("play");
 var scores = document.getElementById("scores");
+var redValueTest = document.getElementById("redValueTest");
 var compare;
 var ouchCompare;
-var blackValue;
-var redValue;
-var blueValue;
+var whiteValue = 0;
+var redValue = 0;
+var blueValue = 0;
 var timer;
 var myVar;
 
@@ -34,34 +35,42 @@ start.addEventListener("click",function(){
     go();
     counter=0;
     score.innerHTML = counter;
-    timer = 15; 
+    timer = 30; 
     start.style.animation = "";
     
     
     slider.oninput = function(){
 	
-	 if (Math.abs(blue.getAttribute("r") - black.getAttribute("r")) <=5) {
+	 // if blue = white
+	 if (Math.abs(blue.getAttribute("r") - white.getAttribute("r")) <=5) {
+		//red.setAttribute("r", 0);
         score.innerHTML = counter++;
 		blueValue = blue.getAttribute("r");
-        blackValue = Math.floor(Math.random() * (135 - 2) ) + 2;
-        black.setAttribute("r", blackValue);
+        whiteValue = Math.floor(Math.random() * (135 - 2) ) + 2;
+        white.setAttribute("r", whiteValue);
 		
-		if(blackValue > blueValue){
-            blackValue += 20;
-			redValue = Math.floor(Math.random() * (135 - blackValue) ) + blackValue;
+		// setting the red circle
+		// when the white circle is above the blue 
+		if(whiteValue > blueValue && blueValue > 15){
+            //whiteValue += 20;
+			blueValue = blueValue-10;
+			redValue = Math.floor(Math.random() * (parseInt(blueValue) - 1) ) + 1;
 			red.setAttribute("r", redValue);
 		}
 		
-		if(blackValue < blueValue){;
-			redValue = Math.floor(Math.random() * (150 - blueValue) ) + blueValue;
+		//when blue is above white
+		if(whiteValue < blueValue){
+			redValue = Math.floor(Math.random() * (145 - parseInt(blueValue)+10) + parseInt(blueValue)+10);
 			red.setAttribute("r", redValue);
 		}
     }
     else{
     	blue.setAttribute("r", this.value);
     }
-    if (Math.abs(blue.getAttribute("r") - red.getAttribute("r")) <= 2) {
-        timer = 1;
+	
+	// if blue = red	
+    if (Math.abs(blue.getAttribute("r") - red.getAttribute("r")) <= 3) {
+        timer = 0;
     }
 	
 	
@@ -74,7 +83,7 @@ start.addEventListener("click",function(){
 function reset(){
     
     blue.setAttribute("r", 135);
-    black.setAttribute("r", 1);
+    white.setAttribute("r", 1);
     red.setAttribute("r", 0);
     slider.oninput = null;
     start.style.animation = "playagain 5s  linear 0s 5";
@@ -108,7 +117,7 @@ function stop(){
 function showMenu(){
     
     if(menuIcon.className === "white"){
-		menuIcon.className = "black";
+		menuIcon.className = "white";
 	}
 	else{
 		menuIcon.className = "white"

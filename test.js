@@ -52,15 +52,13 @@ start.addEventListener("click",function(){
 		// setting the red circle
 		// when the white circle is above the blue 
 		if(whiteValue > blueValue && blueValue > 15){
-            //whiteValue += 20;
-			blueValue = blueValue-10;
-			redValue = Math.floor(Math.random() * (parseInt(blueValue) - 1) ) + 1;
+			redValue = Math.floor(Math.random() * ((parseInt(blueValue)-10) - 1) ) + 1;
 			red.setAttribute("r", redValue);
 		}
 		
 		//when blue is above white
 		if(whiteValue < blueValue){
-			redValue = Math.floor(Math.random() * (145 - parseInt(blueValue)+10) + parseInt(blueValue)+10);
+			redValue = Math.floor(Math.random() * (145 - parseInt(blueValue)+6) + parseInt(blueValue)+6);
 			red.setAttribute("r", redValue);
 		}
     }
@@ -84,7 +82,7 @@ function reset(){
     
     blue.setAttribute("r", 135);
     white.setAttribute("r", 1);
-    red.setAttribute("r", 0);
+    red.setAttribute("r", 500);
     slider.oninput = null;
     start.style.animation = "playagain 5s  linear 0s 5";
     

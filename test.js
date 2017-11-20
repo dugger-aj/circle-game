@@ -57,6 +57,11 @@ start.addEventListener("click",function(){
 		if(whiteValue > blueValue && blueValue > 15){
 			var tempBlue = parseInt(blueValue) -15;
 			redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;
+			
+			if(redValue > tempBlue){
+				red.setAttribute("r", 500);
+			}
+			
 			red.setAttribute("r", redValue);
 		}
 		
@@ -64,6 +69,7 @@ start.addEventListener("click",function(){
 		if(whiteValue < blueValue){
 			var tempBlue = parseInt(blueValue)+15;
 			redValue = Math.floor(Math.random() * (135 - tempBlue)) + tempBlue;
+			
 			red.setAttribute("r", redValue);
 		}
     }

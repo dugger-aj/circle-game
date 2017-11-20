@@ -13,6 +13,7 @@ var play = document.getElementById("play");
 var scores = document.getElementById("scores");
 var redValueTest = document.getElementById("redValueTest");
 var highScore = document.getElementById("highScore");
+var newHighScore = document.getElementById("newHighScore");
 var compare;
 var ouchCompare;
 var whiteValue = 0;
@@ -20,6 +21,7 @@ var redValue = 0;
 var blueValue = 0;
 var timer;
 var myVar;
+var localHighScore;
 
 function loader(){
     myVar = setTimeout(showPage, 2000);
@@ -46,20 +48,22 @@ start.addEventListener("click",function(){
 	 if (Math.abs(blue.getAttribute("r") - white.getAttribute("r")) <=5) {
 		//red.setAttribute("r", 0);
         score.innerHTML = counter++;
-		blueValue = blue.getAttribute("r");
-        whiteValue = Math.floor(Math.random() * (135 - 2) ) + 2;
+		blueValue = parseInt(blue.getAttribute("r"));
+        whiteValue = parseInt(Math.floor(Math.random() * (135 - 2) ) + 2);
         white.setAttribute("r", whiteValue);
 		
 		// setting the red circle
 		// when the white circle is above the blue 
 		if(whiteValue > blueValue && blueValue > 15){
-			redValue = Math.floor(Math.random() * ((parseInt(blueValue)-10) - 1) ) + 1;
+			var tempBlue = parseInt(blueValue) -15;
+			redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;
 			red.setAttribute("r", redValue);
 		}
 		
 		//when blue is above white
 		if(whiteValue < blueValue){
-			redValue = Math.floor(Math.random() * (145 - parseInt(blueValue)+6) + parseInt(blueValue)+6);
+			var tempBlue = parseInt(blueValue)+15;
+			redValue = Math.floor(Math.random() * (135 - tempBlue)) + tempBlue;
 			red.setAttribute("r", redValue);
 		}
     }
@@ -109,7 +113,15 @@ function stop(){
     timer = 0;
     start.innerHTML = "Game Over - Play Again?";
     document.body.style.animation = "";
-	localStorage.setItem("highScore",counter -1);
+	localHighScore = parseInt(localStorage.getItem("highScore"));
+	var tempScore = counter-1;
+	
+	if( localHighScore < tempScore)
+	{
+		localStorage.setItem("highScore",counter -1);
+		newHighScoreF();
+	}
+	
 	highScore.innerHTML = localStorage.getItem("highScore");
     reset(); 
     
@@ -149,4 +161,13 @@ function showScores(){
 	else{
 		scores.className = "block"
 	}
+}
+
+function newHighScoreF(){
+	if(newHighScore.className == "show"){
+        newHighScore.className = "hide";
+    }
+    else{
+        newHighScore.className = "show";
+    }
 }

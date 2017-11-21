@@ -25,13 +25,16 @@ var timer;
 var myVar;
 var startStuffVar;
 var countDownVar;
+var testing;
 
 
 if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
 
 function loader(){
-	
+	testing = setTimeout(function(){
+		window.scrollTo(0,1);
+	}, 100);
     myVar = setTimeout(showPage, 2000);
     
 	highScore.innerHTML = localStorage.getItem("highScore");

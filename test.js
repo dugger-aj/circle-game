@@ -22,6 +22,9 @@ var redValue = 0;
 var blueValue = 0;
 var timer;
 var myVar;
+var startStuffVar;
+var countDownVar;
+
 
 if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
@@ -38,53 +41,72 @@ function showPage() {
 }
 
 start.addEventListener("click",function(){
-    go();
+	
+	startStuffVar = setTimeout(startStuff, 4000);
+	var countDown = 4;
+	start.style.animation = "";
+	newHighScore.className = "hide";
+	countDownVar = setInterval(function() {
+        countDown--;
+        start.innerHTML = "Game will start in: " + countDown;
+        if (countDown == 0) {
+			start.innerHTML = "GO!";
+            clearInterval(countDownVar); 
+        }
+    }, 1000);
+	
+    
+
+});
+
+function startStuff(){
+	go();
     counter=0;
     score.innerHTML = counter;
     timer = 30; 
-    start.style.animation = "";
-    newHighScore.className = "hide";
+    
+    
     
     
     slider.oninput = function(){
 	
-	 // if blue = white
-	 if (Math.abs(blue.getAttribute("r") - white.getAttribute("r")) <=5) {
-		red.setAttribute("r", 500);
-        score.innerHTML = counter++;
-		blueValue = parseInt(blue.getAttribute("r"));
-        whiteValue = parseInt(Math.floor(Math.random() * (135 - 2) ) + 2);
-        white.setAttribute("r", whiteValue);
-		
-		// setting the red circle
-		// when the white circle is above the blue 
-		if(whiteValue > blueValue && blueValue > 15){
-			var tempBlue = parseInt(blueValue) -15;
-			redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;			
-			red.setAttribute("r", redValue);
-		}
-		
-		//when blue is above white
-		if(whiteValue < blueValue){
-			var tempBlue = parseInt(blueValue)+15;
-			redValue = Math.floor(Math.random() * (135 - tempBlue)) + tempBlue;
+		 // if blue = white
+		 if (Math.abs(blue.getAttribute("r") - white.getAttribute("r")) <=5) {
+			red.setAttribute("r", 500);
+			score.innerHTML = counter++;
+			blueValue = parseInt(blue.getAttribute("r"));
+			whiteValue = parseInt(Math.floor(Math.random() * (135 - 2) ) + 2);
+			white.setAttribute("r", whiteValue);
 			
-			red.setAttribute("r", redValue);
+			// setting the red circle
+			// when the white circle is above the blue 
+			if(whiteValue > blueValue && blueValue > 15){
+				var tempBlue = parseInt(blueValue) -15;
+				redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;			
+				red.setAttribute("r", redValue);
+			}
+			
+			//when blue is above white
+			if(whiteValue < blueValue){
+				var tempBlue = parseInt(blueValue)+15;
+				redValue = Math.floor(Math.random() * (135 - tempBlue)) + tempBlue;
+				
+				red.setAttribute("r", redValue);
+			}
 		}
-    }
-    else{
-    	blue.setAttribute("r", this.value);
-    }
+		else{
+			blue.setAttribute("r", this.value);
+		}
+		
+		// if blue = red	
+		if (Math.abs(blue.getAttribute("r") - red.getAttribute("r")) <= 3) {
+			timer = 0;
+		}
 	
-	// if blue = red	
-    if (Math.abs(blue.getAttribute("r") - red.getAttribute("r")) <= 3) {
-        timer = 0;
-    }
 	
-	
+	}
 }
 
-});
 
 
 
@@ -170,5 +192,5 @@ function showScores(){
 }
 
 } else {
-    alert();
+    alert("Browser does not support local storage");
 }

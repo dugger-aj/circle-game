@@ -13,6 +13,7 @@ var play = document.getElementById("play");
 var scores = document.getElementById("scores");
 var redValueTest = document.getElementById("redValueTest");
 var highScore = document.getElementById("highScore");
+var newHighScoreValue = document.getElementById("newHighScoreValue");
 var newHighScore = document.getElementById("newHighScore");
 var compare;
 var ouchCompare;
@@ -21,12 +22,14 @@ var redValue = 0;
 var blueValue = 0;
 var timer;
 var myVar;
-var localHighScore;
+
+if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
 
 function loader(){
     myVar = setTimeout(showPage, 2000);
     document.getElementById("main").style.display = "none";
-	highScore. innerHTML = localStorage.getItem("highScore");
+	highScore.innerHTML = localStorage.getItem("highScore");
 }
 
 function showPage() {
@@ -40,13 +43,14 @@ start.addEventListener("click",function(){
     score.innerHTML = counter;
     timer = 30; 
     start.style.animation = "";
+    newHighScore.className = "hide";
     
     
     slider.oninput = function(){
 	
 	 // if blue = white
 	 if (Math.abs(blue.getAttribute("r") - white.getAttribute("r")) <=5) {
-		//red.setAttribute("r", 0);
+		red.setAttribute("r", 500);
         score.innerHTML = counter++;
 		blueValue = parseInt(blue.getAttribute("r"));
         whiteValue = parseInt(Math.floor(Math.random() * (135 - 2) ) + 2);
@@ -56,12 +60,7 @@ start.addEventListener("click",function(){
 		// when the white circle is above the blue 
 		if(whiteValue > blueValue && blueValue > 15){
 			var tempBlue = parseInt(blueValue) -15;
-			redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;
-			
-			if(redValue > tempBlue){
-				red.setAttribute("r", 500);
-			}
-			
+			redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;			
 			red.setAttribute("r", redValue);
 		}
 		
@@ -94,7 +93,7 @@ function reset(){
     blue.setAttribute("r", 135);
     white.setAttribute("r", 1);
     red.setAttribute("r", 500);
-    slider.oninput = null;
+    
     start.style.animation = "playagain 5s  linear 0s 5";
     
 }
@@ -117,18 +116,19 @@ function go (){
 
 function stop(){
     timer = 0;
+    slider.oninput = null;
     start.innerHTML = "Game Over - Play Again?";
     document.body.style.animation = "";
-	localHighScore = parseInt(localStorage.getItem("highScore"));
-	var tempScore = counter-1;
 	
-	if( localHighScore < tempScore)
+	if(parseInt(localStorage.highScore) < counter -1 || localStorage.highScore === undefined)
 	{
 		localStorage.setItem("highScore",counter -1);
-		newHighScoreF();
+		newHighScore.className = "show";
+        newHighScoreValue.innerHTML = counter - 1;
+        highScore.innerHTML = localStorage.getItem("highScore");
 	}
 	
-	highScore.innerHTML = localStorage.getItem("highScore");
+	
     reset(); 
     
 }
@@ -169,11 +169,6 @@ function showScores(){
 	}
 }
 
-function newHighScoreF(){
-	if(newHighScore.className == "show"){
-        newHighScore.className = "hide";
-    }
-    else{
-        newHighScore.className = "show";
-    }
+} else {
+    alert();
 }

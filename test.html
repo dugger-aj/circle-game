@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="test.css">
 	<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    
 </head>
 
 <body onload="loader();">
@@ -21,12 +22,12 @@
         </div>
         <div class="hide" id="menu">
             <h4 id="howToPlay" class="items"onclick="showPlay()">How to Play</h4>
-            <p id="play" class="none">Its really easy. Hit "Begin" and then slide the white circle at the bottom horizontally. The blue circle will change size. Match the blue circle to the white as many times as you can without touching the red 
-            circle. Hurry though, you only have 15 seconds!</p>
+                <p id="play" class="none">Its really easy. Hit "Begin" and then slide the white circle at the bottom horizontally. The blue circle will change size. Match the blue circle to the white as many times as you can without touching the red 
+                circle. Hurry though, you only have 15 seconds!</p>
             <h4 class="items" onclick="showScores()">High Score</h4>
-            <div class="none" id="scores">
-                <p id="highScore">Score Place Holder</p>
-            </div>
+                <div class="none" id="scores">
+                    <p id="highScore">Score Place Holder</p>
+                </div>
 			<h4 class="items"onclick="location.href='index.html';">Landing Page</h4>
         </div>
         <div id="header">
@@ -54,7 +55,7 @@
                 <p>Score: <span id="score">0</span></p>
         </div>
 		<div class="hide" id="newHighScore">
-			<h2>New High Score: <span id="newHighScoreValue"></h2>
+            <h2>New High Score: <span id="newHighScoreValue"></span></h2>
 		</div>
     </div>
 <script src="test.js"></script>

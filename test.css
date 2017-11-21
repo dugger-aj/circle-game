@@ -87,8 +87,16 @@ html{
     text-align: center;
     border-radius: 8px;
     overflow: hidden;
-    transition: left linear .2s;
+    transition: left linear 2s;
     padding: 4px;
+    top: 30%;
+    opacity: .8;
+    height: 30%;
+}
+
+#newHighScore h2{
+    position: relative;
+    top: 30%;
 }
 
 #header{

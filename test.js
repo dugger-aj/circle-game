@@ -177,6 +177,8 @@ function showMenu(){
     else{
         menu.className = "show";
     }
+	
+	newHighScore.className = "hide";
     
 }
 
@@ -204,6 +206,8 @@ function showScores(){
 		scores.className = "block"
 	}
 }
+
+
 
 } else {
     alert("Browser does not support local storage");

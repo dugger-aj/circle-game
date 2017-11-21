@@ -93,7 +93,7 @@ function startStuff(){
 			}
 			
 			//when blue is above white
-			if(whiteValue < blueValue){
+			if(whiteValue < blueValue && blueValue < 120){
 				var tempBlue = parseInt(blueValue)+15;
 				redValue = Math.floor(Math.random() * (135 - tempBlue)) + tempBlue;
 				

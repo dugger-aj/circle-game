@@ -10,6 +10,7 @@ var start = document.getElementById("start");
 var menu = document.getElementById("menu");
 var menuIcon = document.getElementById("menuIcon");
 var play = document.getElementById("play");
+var demo = document.getElementById("demo");
 var scores = document.getElementById("scores");
 var redValueTest = document.getElementById("redValueTest");
 var highScore = document.getElementById("highScore");
@@ -181,6 +182,13 @@ function showPlay(){
 	}
 	else{
 		play.className = "block"
+	}
+	
+	if(demo.className === "block"){
+		demo.className = "none";
+	}
+	else{
+		demo.className = "block"
 	}
 }
 

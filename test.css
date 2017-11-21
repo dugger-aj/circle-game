@@ -147,6 +147,13 @@ html{
     border-radius: 50%;
 } 
 
+.slider::-ms-thumb  {
+    width: 40px;
+    height: 40px;
+    background: url("slide.png");
+    cursor: pointer;
+    border-radius: 50%;
+} 
 #bottom{
 	color: white;
 	font-size: 2em;

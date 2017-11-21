@@ -31,8 +31,9 @@ if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
 
 function loader(){
+	document.getElementById("main").style.display = "none";
     myVar = setTimeout(showPage, 2000);
-    document.getElementById("main").style.display = "none";
+    
 	highScore.innerHTML = localStorage.getItem("highScore");
 }
 

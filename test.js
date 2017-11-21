@@ -43,6 +43,7 @@ function showPage() {
 start.addEventListener("click",function(){
 	
 	startStuffVar = setTimeout(startStuff, 4000);
+	start.disabled = true;
 	var countDown = 4;
 	start.style.animation = "";
 	newHighScore.className = "hide";
@@ -117,6 +118,7 @@ function reset(){
     red.setAttribute("r", 500);
     
     start.style.animation = "playagain 5s  linear 0s 5";
+	start.disabled = false;
     
 }
 
@@ -151,7 +153,7 @@ function stop(){
 	}
 	
 	
-    reset(); 
+    reset();
     
 }
 

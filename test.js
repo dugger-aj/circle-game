@@ -86,15 +86,15 @@ function startStuff(){
 			
 			// setting the red circle
 			// when the white circle is above the blue 
-			if(whiteValue > blueValue && blueValue > 15){
-				var tempBlue = parseInt(blueValue) -15;
+			if(whiteValue > blueValue && blueValue > 25){
+				var tempBlue = parseInt(blueValue) -25;
 				redValue = Math.floor(Math.random() * (tempBlue - 1)) + 1;			
 				red.setAttribute("r", redValue);
 			}
 			
 			//when blue is above white
-			if(whiteValue < blueValue && blueValue < 120){
-				var tempBlue = parseInt(blueValue)+15;
+			if(whiteValue < blueValue && blueValue < 110){
+				var tempBlue = parseInt(blueValue)+25;
 				redValue = Math.floor(Math.random() * (135 - tempBlue)) + tempBlue;
 				
 				red.setAttribute("r", redValue);

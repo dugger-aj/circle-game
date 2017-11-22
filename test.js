@@ -16,6 +16,7 @@ var redValueTest = document.getElementById("redValueTest");
 var highScore = document.getElementById("highScore");
 var newHighScoreValue = document.getElementById("newHighScoreValue");
 var newHighScore = document.getElementById("newHighScore");
+var about = document.getElementById("about");
 var compare;
 var ouchCompare;
 var whiteValue = 0;
@@ -204,6 +205,15 @@ function showScores(){
 	}
 	else{
 		scores.className = "block"
+	}
+}
+
+function showAbout(){
+     if(about.className == "block"){
+		about.className = "none";
+	}
+	else{
+		about.className = "block"
 	}
 }
 

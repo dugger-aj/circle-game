@@ -40,9 +40,15 @@ html{
     padding: 4px;
     
 }
+.items{
+	width: 80%;
+	margin: auto;
+	padding: 4px;
+}
 
 .items:hover{
     background: white;
+	border-radius: 8px;
 }
 
 .show{

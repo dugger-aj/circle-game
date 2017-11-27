@@ -1,3 +1,4 @@
+var html = document.getElementsByTagName("html");
 var test = document.getElementById("index");
 var slider = document.getElementById("myRange");
 var blue = document.getElementById("circle");
@@ -17,6 +18,7 @@ var highScore = document.getElementById("highScore");
 var newHighScoreValue = document.getElementById("newHighScoreValue");
 var newHighScore = document.getElementById("newHighScore");
 var about = document.getElementById("about");
+var themes = document.getElementById("themes");
 var compare;
 var ouchCompare;
 var whiteValue = 0;
@@ -28,9 +30,26 @@ var startStuffVar;
 var countDownVar;
 var testing;
 
+//ajax call
+var colors;
+var xhr = new XMLHttpRequest();
+xhr.open('GET', "colors.json", true);
+xhr.responseType = 'text';
+xhr.send();
+
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        colors = JSON.parse(xhr.responseText);
+        console.log(colors);
+        enterData(0);
+    } 
+} 
+//end ajax call
+
 
 if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
+	
 
 function loader(){
 	testing = setTimeout(function(){
@@ -39,6 +58,12 @@ function loader(){
     myVar = setTimeout(showPage, 2000);
     
 	highScore.innerHTML = localStorage.getItem("highScore");
+	
+	if(localStorage.getItem("circleColor") != undefined){
+		blue.setAttribute("stroke", localStorage.getItem("circleColor"));
+	}
+	
+	html[0].style.backgroundColor = localStorage.getItem("backgroundColor");
 }
 
 function showPage() {
@@ -52,6 +77,7 @@ start.addEventListener("click",function(){
 	start.disabled = true;
 	var countDown = 4;
 	start.style.animation = "";
+	newHighScore.style.animation = "";
 	newHighScore.className = "hide";
 	countDownVar = setInterval(function() {
         countDown--;
@@ -125,6 +151,7 @@ function reset(){
     
     start.style.animation = "playagain 5s  linear 0s 5";
 	start.disabled = false;
+	
     
 }
 
@@ -209,6 +236,16 @@ function showScores(){
 	}
 }
 
+function showThemes(){
+     if(themes.className == "block"){
+		themes.className = "none";
+	}
+	else{
+		themes.className = "block"
+	}
+}
+
+
 function showAbout(){
      if(about.className == "block"){
 		about.className = "none";
@@ -216,6 +253,13 @@ function showAbout(){
 	else{
 		about.className = "block"
 	}
+}
+
+function theme(x){
+	blue.setAttribute("stroke", colors[x].circleColor);
+	html[0].style.backgroundColor = colors[x].background;
+	localStorage.setItem("circleColor", colors[x].circleColor);
+	localStorage.setItem("backgroundColor", colors[x].background);
 }
 
 

@@ -1,0 +1,21 @@
+[   {
+    "name":"orange",
+    "background":"#7c6a61",
+    "circleColor":"#ed560b"
+    },
+    {
+    "name":"green",
+    "background":"#465146",
+    "circleColor":"#23bc23"
+    },
+	{
+    "name":"blue",
+    "background":"#292b2d",
+    "circleColor":"steelBlue"
+    },
+    {
+    "name":"purple",
+    "background":"#48414c",
+    "circleColor":"#8b23bc"
+    }
+]

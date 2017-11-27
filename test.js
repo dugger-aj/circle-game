@@ -154,6 +154,7 @@ function stop(){
 	{
 		localStorage.setItem("highScore",counter -1);
 		newHighScore.className = "show";
+		newHighScore.style.animation = "spin 1s linear";
         newHighScoreValue.innerHTML = counter - 1;
         highScore.innerHTML = localStorage.getItem("highScore");
 	}

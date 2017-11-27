@@ -41,7 +41,6 @@ xhr.onload = function () {
     if (xhr.status === 200) {
         colors = JSON.parse(xhr.responseText);
         console.log(colors);
-        enterData(0);
     } 
 } 
 //end ajax call

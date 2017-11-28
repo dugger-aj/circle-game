@@ -132,6 +132,7 @@ html{
 	text-align: center;
 	border-radius: 8px;
     font-size: 1.3em;
+    
 }
 #testcontainer{
 	height: 200px;
@@ -254,7 +255,7 @@ button{
 
 @keyframes done {
     
-    50% {background: rgba(255,0,0,.5);}
+    50% {background: gray;}
 
 
 }

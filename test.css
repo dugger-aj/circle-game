@@ -44,6 +44,7 @@ html{
 	width: 80%;
 	margin: auto;
 	padding: 4px;
+    font-weight: 600;
 }
 
 .items:hover{
@@ -104,6 +105,27 @@ html{
     position: relative;
     top: 30%;
 }
+
+#themes p:hover{
+    background-color: white;
+}
+
+#blueTheme{
+    color: steelblue;
+}
+
+#orangeTheme{
+    color: #ed560b;
+}
+
+#purpleTheme{
+    color: #8b23bc;
+}
+
+#greenTheme{
+    color: #23bc23;
+}
+
 
 #header{
 	color:white;
@@ -231,24 +253,14 @@ button{
 
 
 @keyframes done {
-    0% {background: #292b2d;}
-    12.5% {background: rgba(255,0,0,.5);}
-    25% {background: #292b2d;}
-    37.5% {background: rgba(255,0,0,.5);}
-    50% {background: #292b2d;}
-    62.5% {background: rgba(255,0,0,.5);}
-    75% {background: #292b2d;}
-    87.5% {background: rgba(255,0,0,.5);}
-    100% {background: #292b2d;}
+    
+    50% {background: rgba(255,0,0,.5);}
+
 
 }
 
 @keyframes playagain {
-    0% {background: #292b2d;}
-    25% {background: rgba(255,0,0,.5);}
-    50% {background: #292b2d;}
-    75% {background: rgba(255,0,0,.5);} 
-    100% {background: #292b2d;}
+    50% {background: rgba(255,0,0,.5);}
 
 }
 

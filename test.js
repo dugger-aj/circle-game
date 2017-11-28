@@ -60,9 +60,11 @@ function loader(){
 	
 	if(localStorage.getItem("circleColor") != undefined){
 		blue.setAttribute("stroke", localStorage.getItem("circleColor"));
+        html[0].style.backgroundColor = localStorage.getItem("backgroundColor");
+        start.style.backgroundColor = localStorage.getItem("buttonBackgroundColor");
 	}
 	
-	html[0].style.backgroundColor = localStorage.getItem("backgroundColor");
+	
 }
 
 function showPage() {
@@ -148,7 +150,7 @@ function reset(){
     white.setAttribute("r", 1);
     red.setAttribute("r", 500);
     
-    start.style.animation = "playagain 5s  linear 0s 5";
+    start.style.animation = "playagain 2s  linear 0s 5";
 	start.disabled = false;
 	
     
@@ -159,7 +161,7 @@ function go (){
         timer--;
         start.innerHTML = timer;
         if (timer < 6){
-            document.body.style.animation = "done 5s  linear 0s infinite";
+            html[0].style.animation = "done 2s  linear 0s infinite";
         }
         if (timer < 0) {
             clearInterval(x); 
@@ -174,7 +176,7 @@ function stop(){
     timer = 0;
     slider.oninput = null;
     start.innerHTML = "Game Over - Play Again?";
-    document.body.style.animation = "";
+    html[0].style.animation = "";
 	
 	if(parseInt(localStorage.highScore) < counter -1 || localStorage.highScore === undefined)
 	{
@@ -257,8 +259,11 @@ function showAbout(){
 function theme(x){
 	blue.setAttribute("stroke", colors[x].circleColor);
 	html[0].style.backgroundColor = colors[x].background;
+    start.style.backgroundColor = colors[x].background;
 	localStorage.setItem("circleColor", colors[x].circleColor);
 	localStorage.setItem("backgroundColor", colors[x].background);
+    localStorage.setItem("buttonBackgroundColor", colors[x].background);
+    
 }
 
 

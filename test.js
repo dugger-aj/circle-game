@@ -67,6 +67,12 @@ function loader(){
 	
 }
 
+function goFull(){
+	if (screenfull.enabled) {
+	screenfull.request();
+	}
+}
+
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("main").style.display = "block";

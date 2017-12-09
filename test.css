@@ -146,14 +146,18 @@ html{
 #testcontainer{
 	height: 200px;
 	text-align: center;
-    margin-top: 5%;
+    margin-top: -150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
 }
 
 #slidecontainer{
 	width: 50%;
-	margin-top: 25px;
-	margin-left: auto;
-	margin-right: auto;
+	position: absolute;
+    top:65%;
+    left: 25%;
 }
 
 .slider {
@@ -223,11 +227,17 @@ html{
 	color: white;
 	font-size: 2em;
     border-radius: 8px;
+    position: absolute;
+    bottom: 3%;
+    left: 25%;
+    width: 50%;
+    
 }
 
 #bottom p{
 	text-align: center;
 }
+
 
 #startdiv{
     width: 100%;
@@ -261,9 +271,12 @@ button{
 		margin: auto;
 	}
     
+    #slidecontainer{
+	   width: 250px;
+        left: 50%;
+        margin-left: -125px;
+    }   
 }
-
-
 
 @keyframes done {
     
@@ -280,4 +293,21 @@ button{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+    
+    #testcontainer{
+        position: relative;
+    }
+
 }

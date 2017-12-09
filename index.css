@@ -104,7 +104,7 @@ body{
 }
 h1{
 	text-align:center;
-	font-size: 10em;
+	font-size: 13em;
 	color: white;
 	text-shadow: 4px 4px steelblue;
     margin-bottom: -200px; 
@@ -120,9 +120,10 @@ h1:after{
 	
 	width: 500px;
 	height: 500px;
-    position:relative;
-    top:50;
-    margin: auto;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    margin-left: -250px;
     color: white;
 }
 
@@ -135,6 +136,8 @@ h1:after{
     border-radius: 50%;
     border: white 15px solid;
     color: white;
+    margin-top: 30%;
+    margin-top: 30%;
     
 
 }

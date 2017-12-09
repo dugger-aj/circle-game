@@ -307,7 +307,28 @@ button{
   }
     
     #testcontainer{
-        position: relative;
-    }
+	height: 200px;
+	text-align: center;
+    margin-top: 0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+}
+    #bottom{
+	color: white;
+	font-size: 2em;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 3%;
+    top: 150%;
+    width: 50%;
+    
+}
+    #slidecontainer{
+	position: absolute;
+    left: 40%;
+        top: 120%
+}
 
 }

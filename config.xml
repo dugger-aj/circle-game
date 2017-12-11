@@ -13,6 +13,8 @@
       Connect the circles.
   </description>
 
+  <icon src="icon.png" />
+  
   <author>
       Aj Dugger
   </author>

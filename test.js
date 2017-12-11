@@ -149,7 +149,8 @@ function startStuff(){
 		
 		// if blue = red	
 		if (Math.abs(blue.getAttribute("r") - red.getAttribute("r")) <= 5) {
-			timer = 0;
+			timer = -1;
+			stop();
 		}
 	
 	

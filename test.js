@@ -149,8 +149,8 @@ function startStuff(){
 		
 		// if blue = red	
 		if (Math.abs(blue.getAttribute("r") - red.getAttribute("r")) <= 5) {
-			timer = -1;
-			stop();
+			timer = 0;
+			slider.oninput = null;
 		}
 	
 	
@@ -190,7 +190,7 @@ function go (){
 
 function stop(){
     timer = 0;
-    slider.oninput = null;
+    
     start.innerHTML = "Game Over - Play Again?";
     html[0].style.animation = "";
 	

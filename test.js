@@ -165,7 +165,7 @@ function reset(){
     blue.setAttribute("r", 135);
     white.setAttribute("r", 1);
     red.setAttribute("r", 500);
-    
+    slider.oninput = null;
     start.style.animation = "playagain 2s  linear 0s 5";
 	start.disabled = false;
 	
